@@ -1,0 +1,34 @@
+<div class="loader" *ngIf="loading; else content">
+  <ion-header [translucent]="true">
+    <ion-toolbar>
+      <ion-title>
+        {{recipe.title}}
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-progress-bar></ion-progress-bar>
+  <div id="content-container">
+    <ion-content [fullscreen]="true">
+      <ion-card id="recipe-card">
+        <ion-img [src]="recipe.url"></ion-img>
+        <ion-item-divider></ion-item-divider>
+        <ion-text>{{recipe.description}}</ion-text>
+        <ion-item lines="none" id="ingredients-item-main">
+          <ion-icon name="pizza-outline"></ion-icon>
+          <ion-title>Ingredients</ion-title>
+        </ion-item>
+        <ion-col *ngFor="let ingredient of recipe.ingredients" id="recipe-col">
+          <ion-item lines="none" id="main-ingredients">
+            <ion-label>{{ingredient.title}}</ion-label>
+            <ion-label>{{ingredient.count}}</ion-label>
+            <ion-label>{{ingredient.countType}}</ion-label>
+          </ion-item>
+        </ion-col>
+        <ion-button>Add to Shopping List</ion-button>
+      </ion-card>
+    </ion-content>
+  </div>
+</div>
+<ng-template #content>
+  <ion-progress-bar></ion-progress-bar>
+</ng-template>

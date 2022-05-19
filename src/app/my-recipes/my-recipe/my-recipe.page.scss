@@ -1,0 +1,39 @@
+ion-img {
+  width: 43em;
+  height: 27em;
+  max-width: fit-content;
+  max-height: fit-content;
+  object-fit: cover;
+
+}
+
+#recipe-card {
+  text-align: -webkit-center;
+  text-align: -moz-center;
+  max-width: fit-content;
+  display: contents;
+}
+
+#content-container {
+  /*   text-align: -webkit-center; */
+ /*  max-width: fit-content;
+  display: contents; */
+  text-align: center;
+  text-align: -webkit-center;
+  text-align: -moz-center;
+}
+
+ion-text {
+  font-size: large;
+}
+
+#ingredients-item-main {
+  text-align-last: center;
+  display: table;
+}
+#main-ingredients {
+  text-align: center;
+  text-align: -webkit-center;
+  text-align: -moz-center;
+}
+

@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>AddRecipe</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="formData" (ngSubmit)="onSubmit()">
+    <ion-list>
+      <ion-item>
+        <ion-input type="file" (change)="onFileSelected($event)"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Recipe Name</ion-label>
+        <ion-input formControlName="title"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Recipe Description</ion-label>
+        <ion-input formControlName="description"></ion-input>
+      </ion-item>
+    </ion-list>
+    <ion-button type="submit" expand="block">Add Recipe</ion-button>
+  </form>
+</ion-content>

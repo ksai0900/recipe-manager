@@ -1,0 +1,50 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-item lines="none">
+      <ion-title>
+        My Recipes
+      </ion-title>
+      <ion-searchbar [(ngModel)]="searchVar" (ngModelChange)="filter()"></ion-searchbar>
+      <ion-icon name="add-circle-outline" (click)="addRecipe()"></ion-icon>
+    </ion-item>
+  </ion-toolbar>
+</ion-header>
+<ion-progress-bar></ion-progress-bar>
+
+<ion-content [fullscreen]="true">
+  <div class="loader" *ngIf="loading; else content">
+    <ion-grid>
+      <ion-row>
+        <ion-col *ngFor="let recipe of recipes" id="recipe-col">
+          <ion-card id="recipe-item" (click)="navigateToSelectedRecipe(recipe.id)">
+            <ion-img [src]="recipe.url"></ion-img>
+            <ion-label id="title">
+              {{recipe.title}}
+            </ion-label>
+            <ion-note>
+              {{recipe.description}}
+            </ion-note>
+            <ion-item lines="none" *ngIf="recipe.ingredients.length; else noIng">
+              <ion-row>
+                <ion-item lines="none">
+                  <p>
+                    <ion-icon name="pizza-outline"></ion-icon>
+
+                    <ion-badge>{{recipe.ingredients.length}}</ion-badge> Ingredients
+                  </p>
+                  <ion-button>Add</ion-button>
+                </ion-item>
+              </ion-row>
+            </ion-item>
+            <ng-template #noIng>
+              <p>No ingredients available</p>
+            </ng-template>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+  <ng-template #content>
+    <ion-progress-bar></ion-progress-bar>
+  </ng-template>
+</ion-content>

@@ -1,0 +1,35 @@
+ion-img {
+  width: 5em;
+  height: 5em;
+  object-fit: fill;
+  align-self: center;
+}
+
+ #ingredient-item{
+
+  display: flex;
+  justify-content: space-between;
+}
+
+#input-amount {
+  width: 5em;
+}
+#title {
+  font-weight: bold;
+  text-align-last: center;
+  white-space: pre-wrap;
+}
+
+#ingredient-units {
+
+}
+/*#ingredient-card-footer {
+  align-items: center;
+}
+
+#cart {
+  display: flex;
+    padding-left: 4em;
+    padding-right: 3em;
+}
+ */
